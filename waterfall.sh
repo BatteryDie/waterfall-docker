@@ -43,5 +43,11 @@ then
   JAVA_OPTS="-Xms${MC_RAM} -Xmx${MC_RAM} ${JAVA_OPTS}"
 fi
 
+# Add port options to Minecraft server option if necessary
+if [ ! -z "${MC_PORT}" ]
+then
+  MC_OPTS="-p=${MC_PORT}"
+fi
+
 # Start server
-exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui -p=${MC_PORT}
+exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui ${MC_OPTS}
