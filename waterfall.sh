@@ -16,7 +16,7 @@ then
   # Get the latest Waterfall build
   WATERFALL_BUILD=$(wget -qO - $URL | jq '.builds[-1]')
 fi
-JAR_NAME=paper-${MC_VERSION}-${WATERFALL_BUILD}.jar
+JAR_NAME=waterfall-${MC_VERSION}-${WATERFALL_BUILD}.jar
 URL=${URL}/builds/${WATERFALL_BUILD}/downloads/${JAR_NAME}
 
 # Update waterfall if necessary
