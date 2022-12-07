@@ -3,7 +3,7 @@ FROM openjdk:20-slim
 
 # Environment variables
 ENV MC_VERSION="latest" \
-    WATERDFALL_BUILD="latest" \
+    WATERFALL_BUILD="latest" \
     MC_RAM="" \
     JAVA_OPTS=""
 
