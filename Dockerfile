@@ -5,6 +5,7 @@ FROM openjdk:20-slim
 ENV MC_VERSION="latest" \
     WATERFALL_BUILD="latest" \
     MC_RAM="" \
+    MC_PORT="" \
     JAVA_OPTS=""
 
 COPY waterfall.sh .
