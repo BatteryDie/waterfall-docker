@@ -1,31 +1,31 @@
 #!/bin/bash
 
 # Enter server directory
-cd papermc
+cd waterfall
 
 # Set nullstrings back to 'latest'
 : ${MC_VERSION:='latest'}
-: ${PAPER_BUILD:='latest'}
+: ${WATER_BUILD:='latest'}
 
 # Lowercase these to avoid 404 errors on wget
 MC_VERSION="${MC_VERSION,,}"
-PAPER_BUILD="${PAPER_BUILD,,}"
+WATER_BUILD="${WATER_BUILD,,}"
 
 # Get version information and build download URL and jar name
-URL='https://papermc.io/api/v2/projects/paper'
+URL='https://WATERmc.io/api/v2/projects/waterfall'
 if [[ $MC_VERSION == latest ]]
 then
   # Get the latest MC version
   MC_VERSION=$(wget -qO - "$URL" | jq -r '.versions[-1]') # "-r" is needed because the output has quotes otherwise
 fi
 URL="${URL}/versions/${MC_VERSION}"
-if [[ $PAPER_BUILD == latest ]]
+if [[ $WATER_BUILD == latest ]]
 then
   # Get the latest build
-  PAPER_BUILD=$(wget -qO - "$URL" | jq '.builds[-1]')
+  WATER_BUILD=$(wget -qO - "$URL" | jq '.builds[-1]')
 fi
-JAR_NAME="paper-${MC_VERSION}-${PAPER_BUILD}.jar"
-URL="${URL}/builds/${PAPER_BUILD}/downloads/${JAR_NAME}"
+JAR_NAME="WATER-${MC_VERSION}-${WATER_BUILD}.jar"
+URL="${URL}/builds/${WATER_BUILD}/downloads/${JAR_NAME}"
 
 # Update if necessary
 if [[ ! -e $JAR_NAME ]]
