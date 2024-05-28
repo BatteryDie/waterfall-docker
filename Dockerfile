@@ -10,7 +10,7 @@ ENV MC_VERSION="latest" \
     MC_RAM="" \
     JAVA_OPTS=""
 
-COPY WATERmc.sh .
+COPY waterfall.sh .
 RUN apk update \
     && apk add openjdk21-jre \
     && apk add bash \

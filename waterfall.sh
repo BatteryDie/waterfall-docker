@@ -12,7 +12,7 @@ MC_VERSION="${MC_VERSION,,}"
 WATER_BUILD="${WATER_BUILD,,}"
 
 # Get version information and build download URL and jar name
-URL='https://WATERmc.io/api/v2/projects/waterfall'
+URL='https://papermc.io/api/v2/projects/waterfall'
 if [[ $MC_VERSION == latest ]]
 then
   # Get the latest MC version
