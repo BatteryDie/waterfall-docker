@@ -24,7 +24,7 @@ then
   # Get the latest build
   WATER_BUILD=$(wget -qO - "$URL" | jq '.builds[-1]')
 fi
-JAR_NAME="WATER-${MC_VERSION}-${WATER_BUILD}.jar"
+JAR_NAME="waterfall-${MC_VERSION}-${WATER_BUILD}.jar"
 URL="${URL}/builds/${WATER_BUILD}/downloads/${JAR_NAME}"
 
 # Update if necessary
